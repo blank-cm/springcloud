@@ -8,7 +8,12 @@
 	</parent>
 	<artifactId>cloud-provider-payment8001</artifactId>
 	<dependencies>
-		<!--eureka-client-->
+		<dependency>
+			<groupId>com.atguigu.springcloud</groupId>
+			<artifactId>cloud-api-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
