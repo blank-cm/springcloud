@@ -1,5 +1,7 @@
 package com.atguigu.springcloud.controller;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,5 +41,20 @@ public class PaymentController {
 		}else{
 			return new CommonResult(444, "插入数据失败", null);
 		}
+	}
+	
+	@GetMapping("/payment/lb")
+	public String getPaymentLb(){
+		return port;
+	}
+	
+	@GetMapping("/payment/feign/timeout")
+	public String paymentTomeout(){
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return port;
 	}
 }
