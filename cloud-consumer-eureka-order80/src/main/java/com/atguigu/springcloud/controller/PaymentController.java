@@ -18,7 +18,7 @@ import com.atguigu.springcloud.lb.LoadBalancer;
 
 @RestController
 public class PaymentController {
-	public static final String PAYMENT_URL = "http://cloud-payment-service";
+	public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 	@Resource
 	private RestTemplate restTemplate;
 	@Resource
@@ -56,4 +56,6 @@ public class PaymentController {
 		String result = restTemplate.getForObject(instance.getUri()+"/payment/lb", String.class);
 		return result;
 	}
+	
+	
 }
